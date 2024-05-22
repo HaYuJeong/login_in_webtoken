@@ -40,7 +40,7 @@ public class WebSecurityConfig {
 
     //    TODO: 3) JWT(웹토큰) 객체(자동인증을 위한 필터) 정의
     @Bean
-    public org.example.board_login_in_webtoken.security.jwt.AuthTokenFilter authenticationJwtTokenFilter() {
+    public AuthTokenFilter authenticationJwtTokenFilter() {
         return new AuthTokenFilter(); // 개발자가 작성한 웹토큰 인증필터 생성자 함수
     }
 

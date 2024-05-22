@@ -31,7 +31,7 @@ import java.util.Set;
 @RequiredArgsConstructor
 public class UserDetailsServiceImpl implements UserDetailsService {
 
-    private final UserRepository userRepository ;
+    private final UserRepository userRepository;
 
     //    함수 재정의 : 자동 기능 : alt + insert
     @Override
