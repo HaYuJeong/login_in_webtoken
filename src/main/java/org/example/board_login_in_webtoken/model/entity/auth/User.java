@@ -64,8 +64,4 @@ public class User extends BaseTimeEntity2 {
         this.pwQuestion = pwQuestion;
         this.pwAnswer = pwAnswer;
     }
-
-    public User(String userId, String password, Collection<? extends GrantedAuthority> authorities) {
-        super();
-    }
 }
