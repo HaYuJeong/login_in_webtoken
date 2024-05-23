@@ -21,7 +21,7 @@ import java.io.IOException;
  * fileName : AuthTokenFilter
  * author : hayj6
  * date : 2024-05-21(021)
- * description :
+ * description : TODO : 유저가 웹서핑할 때마다 토큰을 백엔드로 보내는데, 토큰이 유효한지 안한지 유효성검사(인증)하는 클래스
  * 요약 :
  * <p>
  * ===========================================================

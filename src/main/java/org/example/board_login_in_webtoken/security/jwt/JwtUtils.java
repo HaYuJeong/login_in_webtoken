@@ -16,7 +16,8 @@ import java.util.Date;
  * author : hayj6
  * date : 2024-05-21(021)
  * description :
- * 요약 :
+ * 요약 : TODO 쓸만한 함수들:UTILITY 함수들. JWT는 토큰이다. 토큰에 해당하는 쓸만한 함수들이 있는 클래스. 토큰 생성, 검증함수
+ * 토큰을 발급해주려면 토큰을 생성해야함. 그걸 생성하는 함수가 여기있음
  * <p>
  * ===========================================================
  * DATE            AUTHOR             NOTE
@@ -58,17 +59,18 @@ public class JwtUtils {
                 .compact(); // 토큰 생성
     }
 
-    //    TODO: 2) JWT(웹토큰) 에서 유저ID(이메일) 꺼내기 함수
+    //    TODO: 2) JWT(웹토큰) 에서 유저ID(이메일) 꺼내기 함수 : 토큰 본문에 아이디가있음 토큰에서 아이디 뽑아내느 함수
     public String getUserNameFromJwtToken(String token) {
 //    웹토큰의 비밀키 + 토큰명을 적용해 body(내용) 안의 subject(유저ID(이메일))에 접근해서 꺼냄
         return Jwts.parser()
                 .setSigningKey(jwtSecret)         // 비밀키 넣기
                 .parseClaimsJws(token)            // 웹토큰이름
-                .getBody()                        // 내용(Body)에 접근
-                .getSubject();                    // 주제(유저ID(이메일))
+                .getBody()                        // 내용(Body)에 접근  : 본문
+                .getSubject();                    // 주제(유저ID(이메일)) : 본문에 있는 아이디
     }
 
-    //    TODO: 3) JWT(웹토큰) 이 유효한지 검증하는 함수
+    //    TODO: 3) JWT(웹토큰) 이 유효한지 검증하는 함수 : 웹토큰 자체에 대한 유효성. 토큰:헤더 본문 서명(인증)으로 이루어져있음
+//    이 세가지가 유효한지 검증. 인증=디지털서명 : 암호화를 해커가 꺼내서 훼손도이ㅓㅆ을떄.
     public boolean validateJwtToken(String authToken) {
         try {
 //      setSigningKey(jwtSecret) : 비밀키를 넣어 웹토큰 디코딩하기(해석)

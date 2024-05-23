@@ -46,7 +46,7 @@ public interface UserRepository extends JpaRepository<User, String> {
 //    todo userId로 조회해서 새 비밀번호로 수정
     @Transactional
     @Modifying // 업데이트문을 쿼리문으로 작성할때는 두개의 어노테이션을 추가해줘야한다.
-    @Query(value = "UPDATE USER SET PASSWORD = :newPw WHERE USER_ID = :userId "
+    @Query(value = "UPDATE LOTTO_USER SET PASSWORD = :newPw WHERE USER_ID = :userId "
             ,nativeQuery = true)
     public void updatePw(@Param("newPw") String newPw, @Param("userId") String userId);
 
@@ -59,6 +59,7 @@ public interface UserRepository extends JpaRepository<User, String> {
             ",BIRTHDAY = :birthday\n" +
             ",PHONE_NUM = :phoneNum\n" +
             ",EMAIL = :email\n" +
+            ",DEPARTMENT = :department\n"+
             ",NORMAL_ADDRESS = :normalAddress\n" +
             ",DETAIL_ADDRESS = :detailAddress\n" +
             "WHERE USER_ID = :userId "
@@ -68,6 +69,7 @@ public interface UserRepository extends JpaRepository<User, String> {
             , @Param("birthday") long birthday
             , @Param("phoneNum") String phoneNum
             , @Param("email") String email
+            , @Param("department") String department
             , @Param("normalAddress") String normalAddress
             , @Param("detailAddress") String detailAddress
             , @Param("userId") String userId

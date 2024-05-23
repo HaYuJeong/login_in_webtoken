@@ -25,14 +25,14 @@ import java.util.Collection;
  * 2024-05-21(021)         hayj6          최초 생성
  */
 @Entity
-@Table(name="USER")
+@Table(name="LOTTO_USER")
 @Getter
 @Setter
 @NoArgsConstructor
-@AllArgsConstructor
+//@AllArgsConstructor
 // soft delete jpa 어노테이션
 @Where(clause = "WITHDRAW_YN = 'N'")
-@SQLDelete(sql ="UPDATE USER SET WITHDRAW_YN = 'N', WITHDRAW_TIME=TO_CHAR(SYSDATE, 'YYYY-MM-DD HH24:MI:SS') WHERE USER_ID = ?")
+@SQLDelete(sql ="UPDATE LOTTO_USER SET WITHDRAW_YN = 'N', WITHDRAW_TIME=TO_CHAR(SYSDATE, 'YYYY-MM-DD HH24:MI:SS') WHERE USER_ID = ?")
 public class User extends BaseTimeEntity2 {
 
     @Id
@@ -46,7 +46,6 @@ public class User extends BaseTimeEntity2 {
     private String department;
     private String normalAddress;
     private String detailAddress;
-    private String pwUpdateTime;
     private String pwQuestion;
     private String pwAnswer;
 

@@ -29,7 +29,7 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 @RequiredArgsConstructor
 @Configuration
 public class WebSecurityConfig {
-    //  TODO: 1) DB 인증을 하는 클래스
+    //  TODO: 1) 여기는 DB 인증을 하는 클래스
     //  TODO: 2) 패스워드 암호화 함수     : 필수 정의
 //        @Bean : IOC (스프링이 객체를 생성해주는 것), 함수의 리턴객체를 생성함
 //         => (참고) 용어 : 스프링 생성한 객체 == 빈(Bean==콩)
@@ -81,6 +81,7 @@ public class WebSecurityConfig {
 
 //        TODO: 웹토큰 클래스를 스프링시큐리티 설정에 끼워넣기 : 모든 조회(CRUD)에서 아래 인증을 실행함
 //         웹토큰 인증필터를 UsernamePasswordAuthenticationFilter(id/암호 인증필터) 앞에 끼워넣기
+//         AUTHTOKENFILTER가 자동으로 실행되게함
         http.addFilterBefore(authenticationJwtTokenFilter(), UsernamePasswordAuthenticationFilter.class);
 
         return http.build();

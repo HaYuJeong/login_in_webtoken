@@ -74,6 +74,7 @@ public class UserService {
             ,  long birthday
             ,  String phoneNum
             ,  String email
+            ,  String department
             ,  String normalAddress
             ,  String detailAddress
             ,  String userId){
@@ -81,6 +82,7 @@ public class UserService {
                 ,   birthday
                 ,   phoneNum
                 ,   email
+                ,   department
                 ,   normalAddress
                 ,   detailAddress
                 ,   userId);
