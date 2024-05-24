@@ -25,20 +25,20 @@ import org.springframework.transaction.annotation.Transactional;
 public interface UserRepository extends JpaRepository<User, String> {
 
 //    todo 아이디 찾기
-    @Query(value = "select * from user\n" +
-            "where user_Id = :userId"
+    @Query(value = "SELECT * FROM LOTTO_USER\n" +
+            "WHERE USER_ID = :userId"
             ,nativeQuery = true)
     public User findByUserId(@Param("userId") String userId);
 
 
 //    todo 아이디 찾기를 위해 아래 변수를 받아서 일치하는 user반환
-    @Query(value = "select * from user where role = :role and USER_NAME = :userName and PHONE_NUM = :phoneNum"
+    @Query(value = "SELECT * FROM LOTTO_USER WHERE ROLE = :role AND USER_NAME = :userName AND PHONE_NUM = :phoneNum"
             , nativeQuery = true)
     public User findId(@Param("role") String role, @Param("userName") String userName, @Param("phoneNum") String phoneNum);
 
 
 //    todo 비밀번호 찾기 위한 회원 조회
-    @Query(value = "select * from user where role = :role and USER_ID= :userId and PW_QUESTION = :pwQuestion and PW_ANSWER = :pwAnswer"
+    @Query(value = "SELECT * FROM LOTTO_USER WHERE ROLE = :role AND USER_ID= :userId AND PW_QUESTION = :pwQuestion AND PW_ANSWER = :pwAnswer"
             , nativeQuery = true)
     public User getForPw(@Param("role") String role, @Param("userId") String userId, @Param("pwQuestion") String pwQuestion, @Param("pwAnswer") String pwAnswer);
 

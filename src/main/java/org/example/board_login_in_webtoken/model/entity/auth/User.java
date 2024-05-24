@@ -29,10 +29,10 @@ import java.util.Collection;
 @Getter
 @Setter
 @NoArgsConstructor
-//@AllArgsConstructor
+@AllArgsConstructor
 // soft delete jpa 어노테이션
 @Where(clause = "WITHDRAW_YN = 'N'")
-@SQLDelete(sql ="UPDATE LOTTO_USER SET WITHDRAW_YN = 'N', WITHDRAW_TIME=TO_CHAR(SYSDATE, 'YYYY-MM-DD HH24:MI:SS') WHERE USER_ID = ?")
+@SQLDelete(sql ="UPDATE LOTTO_USER SET WITHDRAW_YN = 'Y', WITHDRAW_TIME=TO_CHAR(SYSDATE, 'YYYY-MM-DD HH24:MI:SS') WHERE USER_ID = ?")
 public class User extends BaseTimeEntity2 {
 
     @Id
@@ -49,18 +49,9 @@ public class User extends BaseTimeEntity2 {
     private String pwQuestion;
     private String pwAnswer;
 
-    public User(String userId, String password, String userName, long birthday, String phoneNum, String email, String role, String department, String normalAddress, String detailAddress, String pwQuestion, String pwAnswer) {
+    public User(String userId, String password, String role) {
         this.userId = userId;
         this.password = password;
-        this.userName = userName;
-        this.birthday = birthday;
-        this.phoneNum = phoneNum;
-        this.email = email;
         this.role = role;
-        this.department = department;
-        this.normalAddress = normalAddress;
-        this.detailAddress = detailAddress;
-        this.pwQuestion = pwQuestion;
-        this.pwAnswer = pwAnswer;
     }
 }

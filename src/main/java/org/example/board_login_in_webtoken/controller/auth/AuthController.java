@@ -48,8 +48,7 @@ public class AuthController {
 //    todo 로그인 함수 : 로그인은 조회. URL에 안뜨게 하려고 GET아니고 POST
     @PostMapping("/login")
     public ResponseEntity<Object> login(
-            @RequestBody UserReq userReq
-//            프론트에서 받은 정보
+            @RequestBody UserReq userReq      //  프론트에서 받은 정보
     ) {
         try {
 //            1) 직접 인증 시작

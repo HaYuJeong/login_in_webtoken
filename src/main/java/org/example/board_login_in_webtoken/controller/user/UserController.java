@@ -28,7 +28,7 @@ import org.springframework.web.bind.annotation.*;
 public class UserController {
     private final UserService userService ;
 
-    // todo : 회원 상세조회 : 회원정보수정
+    // todo : 회원 상세조회 : 회원정보 수정
 
     @GetMapping("/{userId}")
     public ResponseEntity<Object> findById(@PathVariable String userId){
@@ -64,7 +64,7 @@ public class UserController {
     @DeleteMapping("/delete/{userId}")
     public ResponseEntity<Object> deleteUser(@PathVariable String userId){
         try {
-            log.debug(userId);
+//            log.debug(userId);
             userService.removeById(userId);
             return new ResponseEntity<>(HttpStatus.OK);
         }catch (Exception e){
