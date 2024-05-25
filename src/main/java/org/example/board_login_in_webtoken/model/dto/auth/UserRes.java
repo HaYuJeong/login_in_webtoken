@@ -7,7 +7,7 @@ import lombok.*;
  * fileName : UserRes
  * author : hayj6
  * date : 2024-05-22(022)
- * description :
+ * description : 프론트로 전송할 정보를 담은 DTO
  * 요약 : JWT 토큰 : 로그인 / 웹 서핑할 때 사용
  * <p>
  * ===========================================================

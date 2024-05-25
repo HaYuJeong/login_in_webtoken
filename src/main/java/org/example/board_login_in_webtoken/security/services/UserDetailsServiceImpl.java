@@ -63,7 +63,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 //        A는 [관리자], B는 [유저]. 빼내려면 인덱스번호로 빼기. 한사람에 한권한이라서 인덱스번호 0
 
 //        생성자 : (userId, password, 권한배열)
-//        우리가 권한을 하나만 쓰지만, 권한들로 관리한다. 이렇게 설계해놨기 때문에 울우리는 배열로 쓴다.
+//        우리가 권한을 하나만 쓰지만, 권한들로 관리한다. 이렇게 설계해놨기 때문에 우리는 배열로 쓴다.
         return new UserDto(user.getUserId(),
                 user.getPassword(),
                 authorities

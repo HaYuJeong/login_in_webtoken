@@ -7,7 +7,7 @@ import lombok.*;
  * fileName : NewUser
  * author : hayj6
  * date : 2024-05-22(022)
- * description :
+ * description : TODO 회원가입 용 DTO, passwordEncoder 를 해주기위해 만들었다.
  * 요약 :
  * <p>
  * ===========================================================

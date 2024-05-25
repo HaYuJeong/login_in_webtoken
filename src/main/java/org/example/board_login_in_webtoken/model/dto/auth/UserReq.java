@@ -7,7 +7,7 @@ import lombok.*;
  * fileName : UserReq
  * author : hayj6
  * date : 2024-05-22(022)
- * description :
+ * description : todo 프론트에서 전달한 정보를 받을 DTO 객체
  * 요약 :
  * <p>
  * ===========================================================
