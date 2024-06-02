@@ -1,5 +1,6 @@
 package org.example.board_login_in_webtoken.model.entity.auth;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
@@ -43,7 +44,8 @@ public class User extends BaseTimeEntity2 {
     private String phoneNum;
     private String email;
     private String role;
-    private String department;
+    @Column(name = "DEPT")
+    private String dept;
     private String normalAddress;
     private String detailAddress;
     private String pwQuestion;

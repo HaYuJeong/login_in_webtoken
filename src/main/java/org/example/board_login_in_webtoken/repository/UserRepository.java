@@ -8,6 +8,8 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.Optional;
+
 /**
  * packageName : org.example.board_login_in_webtoken.repository
  * fileName : UserRepository
@@ -28,7 +30,7 @@ public interface UserRepository extends JpaRepository<User, String> {
     @Query(value = "SELECT * FROM LOTTO_USER\n" +
             "WHERE USER_ID = :userId"
             ,nativeQuery = true)
-    public User findByUserId(@Param("userId") String userId);
+    public Optional<User> findByUserId(@Param("userId") String userId);
 
 
 //    todo 아이디 찾기를 위해 아래 변수를 받아서 일치하는 user반환

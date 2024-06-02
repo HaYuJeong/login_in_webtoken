@@ -52,7 +52,7 @@ public class UserController {
     public ResponseEntity<Object> updateUser(@PathVariable String userId,
                                              @RequestBody User user){
         try {
-            userService.updateUserById(user.getUserName(), user.getBirthday(),user.getPhoneNum(), user.getEmail(), user.getDepartment(), user.getNormalAddress(), user.getDetailAddress(), user.getUserId());
+            userService.updateUserById(user.getUserName(), user.getBirthday(),user.getPhoneNum(), user.getEmail(), user.getDept(), user.getNormalAddress(), user.getDetailAddress(), user.getUserId());
             return new ResponseEntity<>(user, HttpStatus.OK);
         }catch (Exception e){
             log.debug(e.getMessage());
