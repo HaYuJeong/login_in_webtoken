@@ -1,5 +1,7 @@
 package org.example.board_login_in_webtoken.service.user;
 
+import jakarta.mail.Message;
+import jakarta.mail.internet.InternetAddress;
 import jakarta.mail.internet.MimeMessage;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -40,7 +42,7 @@ public class EmailService {
         String modifiedText = text + randomNumber;
         log.debug("1");
 
-        MimeMessage mimeMessage = mailSender.createMimeMessage();   // 자바에서 제공
+        MimeMessage mimeMessage = mailSender.createMimeMessage();   // 자바에서 제공 : MimeMessage 객체 : 전송하는 객체
         log.debug("2");
         try {
             MimeMessageHelper helper = new MimeMessageHelper(mimeMessage, false);
@@ -51,6 +53,12 @@ public class EmailService {
             log.debug("3.5" + mimeMessage);
             mailSender.send(mimeMessage);
             log.debug("4");
+//            mimeMessage.setSubject(subject, "utf-8");
+//            mimeMessage.setText(modifiedText, "utf-8", "html");
+//            mimeMessage.addRecipient(Message.RecipientType.TO, new InternetAddress(email));
+//            mailSender.send(mimeMessage);
+
+
         } catch (Exception e) {
             log.debug(e.getMessage());
             throw new RuntimeException("이메일 전송에 실패하였습니다." + e.getMessage());

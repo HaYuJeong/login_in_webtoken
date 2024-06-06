@@ -165,9 +165,10 @@ public class AuthController {
         }
     }
     // todo 새로운 비밀번호 업데이트
-    @PutMapping("/new-pw")
-    public ResponseEntity<Object> updatePw(@RequestBody NewPw newPw){
+    @PutMapping("/new-pw/{userId}")
+    public ResponseEntity<Object> updatePw(@PathVariable String userId, @RequestBody NewPw newPw){
         boolean result = false;
+        log.debug(newPw.getUserId());
         try {
             if (userService.existsById(newPw.getUserId())) {
                 userService.updatePw(passwordEncoder.encode(newPw.getNewPw()), newPw.getUserId());
@@ -179,6 +180,7 @@ public class AuthController {
             }
 
         }catch (Exception e){
+            log.debug(e.getMessage());
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
